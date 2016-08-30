@@ -1,17 +1,19 @@
 # EX3MP's Kickstarter
 
+## Required installations
+
 ```bash
 gem install scss_lint sass
 ```
 
 ```bash
-apt-get install nodejs
+apt-get install nodejs;
 npm install -g grunt-cli bower;
 ```
 
-use <https://github.com/airbnb/css>
+use scss-lint from <https://github.com/airbnb/css>
 
-## / statics/
+## statics/
 
 static files: images (logo) and fonts
 

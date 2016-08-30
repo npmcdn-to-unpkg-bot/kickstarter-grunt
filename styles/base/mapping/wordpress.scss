@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/*
+
+Wordpress
+====
+
+*/
+/*
+
+## Wordpress Mapping
+
+Wordpress editor specific mappings
+
+```
+<pre>
+.mapping {
+	.alignleft {
+		float: left;
+		&.wp-caption {
+			margin-left: 0;
+		}
+	}
+	.alignnone {
+		margin: 0 auto;
+	}
+	.alignright {
+		float: right;
+		&.wp-caption {
+			margin-right: 0;
+		}
+	}
+}
+</pre>
+```
+
+*/
+$screen: "only screen" !default;
+$medium-up: "#{$screen} and (min-width: 35.063em)" !default;
+
+.mapping {
+    .alignleft {
+        margin: 0 auto;
+
+        @media #{$medium-up} {
+            float: left;
+        }
+
+        &.wp-caption {
+            margin-left: 0;
+
+            @media #{$medium-up} {
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    img.alignleft {
+        @media #{$medium-up} {
+            margin-right: 1rem;
+        }
+    }
+
+    .alignnone {
+        margin: 0 auto;
+    }
+
+    .alignright {
+        margin: 0 auto;
+
+        @media #{$medium-up} {
+            float: right;
+        }
+
+        &.wp-caption {
+            margin-right: 0;
+
+            @media #{$medium-up} {
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    img.alignright {
+        @media #{$medium-up} {
+            margin-left: 1rem;
+        }
+    }
+
+    .wp-caption-text {
+        background-color: #f3f3f3;
+        font-size: .9em;
+        padding: .25em .5em;
+    }
+}

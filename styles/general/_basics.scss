@@ -1,0 +1,47 @@
+/*
+
+## Misc CSS
+
+some usefull helper classes ;)
+
+```
+
+```
+
+*/
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.disable-scroll {
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visibile {
+    visibility: visible;
+}
+
+.headline {
+    &a,
+    a {
+        color: inherit; // default a color in headlines
+    }
+}

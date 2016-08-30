@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/*
+
+Navigation
+====
+
+*/
+/*
+
+## Nav element
+
+Example:
+
+```
+<nav class="nav nav--main">
+	<a class="nav__link nav__link--p-home" href=".">home</a>
+	<a class="nav__link nav__link--p-example nav__link--active" href=".">example Active</a>
+	<a class="nav__link nav__link--p-example" href=".">example</a>
+	<a class="nav__link nav__link--p-example" href=".">example</a>
+</nav>
+```
+
+ */
+.nav {
+    &--main,
+    &--footer {
+        // Nav modifier (what type of)
+    }
+
+    &__link {
+        &--p-home,
+        &--p-example {
+            // Page modifier
+        }
+    }
+}

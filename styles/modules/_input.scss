@@ -1,0 +1,92 @@
+@charset "UTF-8";
+$input-background: #f2f2f2 !default;
+$input-border: #666666 !default;
+/*
+
+Default inputs / .input
+====
+
+Example:
+
+```
+<table class="table">
+	<tr class="table__tr">
+		<td class="table__td">.input</td>
+		<td class="table__td"><input type="text" class="input"></td>
+	</tr>
+	<tr class="table__tr">
+		<td class="table__td">.input--hidden</td>
+		<td class="table__td"><input type="hidden" class="input input--hidden"></td>
+	</tr>
+	<tr class="table__tr">
+		<td class="table__td">.input--text</td>
+		<td class="table__td"><input type="text" class="input input--text"></td>
+	</tr>
+	<tr class="table__tr">
+		<td class="table__td">.input--password</td>
+		<td class="table__td"><input type="password" class="input input--password"></td>
+	</tr>
+	<tr class="table__tr">
+		<td class="table__td">.input--submit</td>
+		<td class="table__td"><input type="submit" class="input input--submit"></td>
+	</tr>
+	<tr class="table__tr">
+		<td class="table__td">.input--button</td>
+		<td class="table__td"><input type="button" class="input input--button" value="Button"></td>
+	</tr>
+	<tr class="table__tr">
+		<td class="table__td">.input--checkbox</td>
+		<td class="table__td"><input type="checkbox" class="input input--checkbox"></td>
+	</tr>
+	<tr class="table__tr">
+	<tr class="table__tr">
+		<td class="table__td">.input--date</td>
+		<td class="table__td"><input type="date" class="input input--date"></td>
+	</tr>
+		<td class="table__td">.input--radio</td>
+		<td class="table__td"><input type="radio" class="input input--radio"></td>
+	</tr>
+	<tr class="table__tr">
+		<td class="table__td">.input--file</td>
+		<td class="table__td"><input type="file" class="input input--file"></td>
+	</tr>
+</table>
+```
+
+*/
+.input {
+    font-size: 1rem;
+    transition: padding 300ms ease;
+
+    &--wrap {
+        position: relative;
+    }
+
+    &--text {
+        background-color: $input-background;
+        border: 1px solid $input-border;
+        line-height: 1.5em;
+        display: block;
+        padding: rem(14) .75em;
+    }
+
+    &--full {
+        width: 100%;
+    }
+
+    &--date,
+    &--password,
+    &--search {
+        @extend .input--text;
+    }
+
+    &--button,
+    &--submit {
+        @extend .btn;
+        @extend .btn--primary;
+    }
+
+    &:focus {
+        padding-left: 6px;
+    }
+}

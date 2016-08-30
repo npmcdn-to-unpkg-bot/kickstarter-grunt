@@ -1,0 +1,12 @@
+@import "base/mapping"; // processwire ckeditor
+
+.InputfieldCKEditor {
+    .InputfieldContent > * {
+        @extend .mapping;
+    }
+}
+// wordpress
+
+#tinymce {
+    @extend .mapping;
+}

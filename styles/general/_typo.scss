@@ -1,0 +1,261 @@
+@charset "UTF-8";
+/*
+
+Typo
+====
+
+Misc typography settings
+
+*/
+/*
+
+## Sizes
+
+```
+<span class="typo typo--1">&lt;typo--1&gt; The quick brown fox &hellip;</h1>
+<span class="typo typo--2">&lt;typo--2&gt; The quick brown fox &hellip;</h2>
+<span class="typo typo--3">&lt;typo--3&gt; The quick brown fox &hellip;</h3>
+<span class="typo typo--4">&lt;typo--4&gt; The quick brown fox &hellip;</h4>
+<span class="typo typo--5">&lt;typo--5&gt; The quick brown fox &hellip;</h5>
+<span class="typo typo--6">&lt;typo--6&gt; The quick brown fox &hellip;</h6>
+```
+
+*/
+%__typo1 {
+    font-size: em(34);
+}
+
+%__typo2 {
+    font-size: em(26);
+}
+
+%__typo3 {
+    font-size: em(21);
+}
+
+%__typo4 {
+    font-size: em(16);
+}
+
+%__typo5 {
+    font-size: em(13);
+}
+
+%__typo6 {
+    font-size: em(10);
+}
+
+.typo {
+    &--1 {
+        @extend %__typo1;
+    }
+
+    &--2 {
+        @extend %__typo2;
+    }
+
+    &--3 {
+        @extend %__typo3;
+    }
+
+    &--4 {
+        @extend %__typo4;
+    }
+
+    &--5 {
+        @extend %__typo5;
+    }
+
+    &--6 {
+        @extend %__typo6;
+    }
+}
+/*
+
+## Headlines
+
+```
+<h1 class="headline headline--1">&lt;h1&gt; The quick brown fox &hellip;</h1>
+<h2 class="headline headline--2">&lt;h2&gt; The quick brown fox &hellip;</h2>
+<h3 class="headline headline--3">&lt;h3&gt; The quick brown fox &hellip;</h3>
+<h4 class="headline headline--4">&lt;h4&gt; The quick brown fox &hellip;</h4>
+<h5 class="headline headline--5">&lt;h5&gt; The quick brown fox &hellip;</h5>
+<h6 class="headline headline--6">&lt;h6&gt; The quick brown fox &hellip;</h6>
+
+<pre>
+.headline--first -> Removes margin-top
+.headline--last -> Removes margin-bottom
+.headline--inline -> Sets display to inline-block
+</pre>
+```
+
+*/
+%__headline {
+    hyphens: auto;
+    margin-top: 0;
+    @include font-normal;
+    margin-bottom: rem(8);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    a {
+        color: inherit;
+    }
+}
+//primary secondary tertiary quaternary quinary senary
+.headline {
+    @extend %__headline;
+
+    &--1 {
+        @extend %__typo1;
+    }
+
+    &--2 {
+        @extend %__typo2;
+    }
+
+    &--3 {
+        @extend %__typo3;
+    }
+
+    &--4 {
+        @extend %__typo4;
+    }
+
+    &--5 {
+        @extend %__typo5;
+    }
+
+    &--6 {
+        @extend %__typo6;
+    }
+
+    &--first {
+        margin-top: 0;
+    }
+
+    &--last {
+        margin-bottom: 0;
+    }
+
+    &--inline {
+        display: inline-block;
+    }
+}
+/*
+
+## Misc text // paragraphs
+
+```
+<p class="text"><acronym title="Lorem ipsum Beispieltext">Lorem ipsum dolor</acronym> sit amet, consectetur adipisicing elit. Vel,
+et praesentium commodi ullam magnam quia repellendus voluptatibus vitae tempore
+voluptatum illo natus dolor fugiat nihil officiis, eligendi eum optio aperiam.</p>
+```
+
+ */
+$color-text: #000000 !default;
+
+%text {
+    hyphens: auto;
+    color: $color-text;
+    @include font-normal;
+}
+
+.text {
+    @extend %text;
+}
+/*
+
+## Links within default text
+
+```
+<p><a class="link" href=".">Ein normaler Text-Link.</a></p>
+<p><a class="link link--hover" href=".">Ein normaler Text-Link. Status: Hover</a> </p>
+<p><a class="link link--active" href=".">Ein normaler Text-Link. Status: Active</a> </p>
+<p><a class="link link--focus" href=".">Ein normaler Text-Link. Status: Focus</a> </p>
+<p><a class="link link--extern" href=".">Ein normaler Text-Link. Status: Extern</a> </p>
+```
+
+*/
+$color-text: #000000 !default;
+$color-text-hover: #333333 !default;
+
+%link {
+    color: $color-text;
+    text-decoration: none;
+    background-color: transparent;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+
+    &--active,
+    &--focus,
+    &--hover,
+    &:focus,
+    &:hover {
+        color: $color-text-hover;
+        background-color: $color-text;
+    }
+
+    &--extern {
+        // man kann auch: [href*="//"]:not([href*="vgh-newsroom"]) nutzen
+
+        &::after {
+            @include icon;
+            @extend %__icon--external-link;
+            position: relative;
+            top: 1px;
+            left: 3px;
+            font-size: rem(14);
+        }
+    }
+}
+
+.link {
+    @extend %link;
+
+    &--active {
+        @extend %link--active;
+    }
+
+    &--focus,
+    &--hover {
+        @extend %link--hover;
+    }
+
+    &--extern {
+        @extend %link--extern;
+    }
+}
+/*
+
+## Text variations
+
+```
+<ul>
+	<li><i class="i">Lorem ipsum dolor sit amet</i></li>
+	<li><em class="em">Lorem ipsum dolor sit amet</em></li>
+	<li><b class="b">Lorem ipsum dolor sit amet</b></li>
+	<li><strong class="strong">Lorem ipsum dolor sit amet</strong></li>
+</ul>
+```
+
+*/
+%__i,
+.i {
+    @include font-italic;
+}
+
+%__em,
+.em {
+    @include font-italic;
+}
+
+%__b,
+.b {
+    @include font-bold;
+}
+
+%__strong,
+.strong {
+    @include font-bold;
+}

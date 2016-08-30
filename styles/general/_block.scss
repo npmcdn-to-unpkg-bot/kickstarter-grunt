@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*
+
+Block
+====
+*/
+$block-margin: rem(64);
+
+.block {
+    &--margin {
+        margin-top: $block-margin;
+
+        &:first-child {
+            margin-top: 0; // reset for the first child
+        }
+    }
+
+    &--text {
+        // text
+    }
+}

@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/*
+
+Media (Images / Videos)
+====
+
+*/
+/*
+
+## Align images left /right
+
+Example:
+
+```
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+<div class="clearfix"></div>
+<img src="../../images/_dummy1.jpg" class="img img--right" width="300" alt="Dummy" />
+<h2 class="headline headline--2">Lorem ipsum?</h2>
+<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+<div class="clearfix"></div>
+<img src="../../images/_dummy2.jpg" class="img img--left" width="300" alt="Dummy" />
+<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+<div class="clearfix"></div>
+```
+
+*/
+$medium-up: "screen and (min-width: 720px)" !default;
+
+.img {
+    margin: .5em 0;
+
+    @media #{$medium-up} {
+        margin: .5em;
+    }
+
+    &--right {
+        @media #{$medium-up} {
+            margin-right: 0;
+            float: right;
+        }
+    }
+
+    &--left {
+        @media #{$medium-up} {
+            margin-left: 0;
+            float: left;
+        }
+    }
+}

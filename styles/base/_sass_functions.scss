@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/*
+
+SASS: Functions
+====
+
+ */
+/*
+
+## EM / REM
+
+Calculates stuff based on $base-font-size
+
+If you're using "em" values you can add a second parameter as a calculation-basis
+
+```
+<pre>
+.klasse {
+	font-size: em(16);
+	font-size: em(16, 18);
+	font-size: rem(16);
+}
+</pre>
+
+
+```
+
+*/
+@function em($pixel, $reference: $base-font-size) {
+    @if not unitless($pixel) {
+        $pixel: strip-units($pixel);
+    }
+    @if not unitless($reference) {
+        $reference: strip-units($reference);
+    }
+    @return ($pixel / $reference) * 1em;
+}
+@function rem($pixel, $reference: $base-font-size) {
+    @if not unitless($pixel) {
+        $pixel: strip-units($pixel);
+    }
+    @if not unitless($reference) {
+        $reference: strip-units($reference);
+    }
+    @return ($pixel / $reference) * 1rem;
+}

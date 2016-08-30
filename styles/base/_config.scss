@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/*
+
+Config
+====
+
+*/
+/*
+
+## Typography
+
+```
+<span style="font-size: 16px;">Diese Schrift hat die base-font-size</span><br />
+<span class="font-bold">Fette Schrift: $font_family_bold durch .font-bold</span>
+```
+*/
+$base-font-size: 16 !global; //required
+$body-font-size: 16 !global; //required
+$em-base: $base-font-size/$base-font-size !global; //required
+$font_family_normal: 'Open Sans', sans-serif; //required
+$font_weight_normal: 400; //required
+$font_style_normal: normal; //required
+$font_family_bold: 'Open Sans', sans-serif; //required
+$font_weight_bold: 600; //required
+$font_style_bold: normal; //required
+$font_family_italic: 'Open Sans', sans-serif; //required
+$font_weight_italic: 200; //required
+$font_style_italic: italic; //required
+
+// foundation
+$font-family-sans-serif: $font_family_normal;
+$font-weight-normal: $font_weight_normal;
+$font-weight-bold: $font_weight_bold;
+
+@import 'sass_functions'; //use em and rem in config.scss
+
+/*
+
+## Colors
+
+```
+<div class="dummy-justfiy">
+<div class="dummy-block dummy-block--with-content" style="background-color: #FFFFFF;color: black;">white</div>
+<div class="dummy-block dummy-block--with-content" style="background-color: #ECEDED;color: black;">whitish-grey</div>
+<div class="dummy-block dummy-block--with-content" style="background-color: #505559;color: white;">grey</div>
+<div class="dummy-block dummy-block--with-content" style="background-color: #000000;color: white;">black</div>
+<div class="dummy-block dummy-block--with-content" style="background-color: red;color: white;">red</div>
+<div class="dummy-block dummy-block--with-content" style="background-color: green;color: white;">green</div>
+<div class="dummy-block dummy-block--with-content" style="background-color: orange;color: blacke;">orange</div>
+<div class="dummy-block dummy-block--with-content" style="background-color: blue;color: white;">blue</div>
+</div>
+```
+*/
+$white: #FFFFFF !global;
+$whitish-grey: #ECEDED !global;
+$grey: #505559 !global;
+$black: #000000 !global;
+$red: red !global;
+$green: green !global;
+$orange: orange !global;
+$blue: blue !global;
+/*
+
+## Colors within modules
+
+```
+<pre>
+$color_text:		$black		!global;
+$color_text_hover: 	#253E66		!global;
+
+// foundation & .alert mapping
+$primary-color: 			$blue;
+$success-color: 			$green;
+$warning-color:				$orange;
+$alert-color: 				$red;
+</pre>
+```
+*/
+$color_text: $black !global;
+$color_text_hover: #253E66 !global;
+// foundation & .alert mapping
+$primary-color: $blue;
+$success-color: $green;
+$warning-color: $orange;
+$alert-color: $red;

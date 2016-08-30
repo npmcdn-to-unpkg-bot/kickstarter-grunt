@@ -1,0 +1,8 @@
+@charset "UTF-8";
+// Foundation for Sites by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+@import "../../../node_modules/foundation-sites/scss/util/util";
+@import "../../../node_modules/foundation-sites/scss/global";
+@import "../../../node_modules/foundation-sites/scss/typography/alignment";
+@include foundation-text-alignment;

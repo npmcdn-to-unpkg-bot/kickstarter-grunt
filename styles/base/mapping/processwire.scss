@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/*
+
+Processwire
+====
+
+*/
+/*
+
+## Processwire Mapping
+
+Processwire editor specific mappings
+
+```
+<pre>
+.mapping {
+	.align {
+		&_right {
+			float: right;
+		}
+		&_left {
+			float: left;
+		}
+	}
+}
+</pre>
+```
+
+*/
+$screen: "only screen" !default;
+$small-only: "#{$screen} and (max-width: 35em)" !default;
+$medium-up: "#{$screen} and (min-width: 35.063em)" !default;
+
+.mapping {
+    .align {
+        &_right {
+            @media #{$small-only} {
+                margin: 0 5%;
+                width: 90%;
+            }
+
+            @media #{$medium-up} {
+                float: right;
+            }
+        }
+
+        &_left {
+            @media #{$small-only} {
+                width: 100%;
+            }
+
+            @media #{$medium-up} {
+                float: left;
+            }
+        }
+    }
+}

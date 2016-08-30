@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/*
+
+Tables
+====
+
+```
+<table class="table">
+	<thead class="table__thead">
+		<tr class="table_tr trable_tr--thead">
+			<th class="table__th table__th--thead">thead th</th>
+			<td class="table__td table__td--thead">thead td</td>
+			<td class="table__td table__td--thead">thead td</td>
+			<td class="table__td table__td--thead">thead td</td>
+		</tr>
+	</thead>
+	<tbody class="table__tbody">
+		<tr class="table_tr trable_tr--tbody">
+			<th class="table__th table__th--tbody">tbody th</th>
+			<td class="table__td table__td--tbody">tbody td</td>
+			<td class="table__td table__td--tbody">tbody td</td>
+			<td class="table__td table__td--tbody">tbody td</td>
+		</tr>
+	</tbody>
+	<tfoot class="table__tfoot">
+	<tr class="table_tr trable_tr--tfoot">
+		<th class="table__th table__th--tfoot">tbody th</th>
+		<td class="table__td table__td--tfoot">tbody td</td>
+		<td class="table__td table__td--tfoot">tbody td</td>
+		<td class="table__td table__td--tfoot">tbody td</td>
+	</tr>
+	</tfoot>
+</table>
+```
+*/
+$white: #ffffff !default;
+$black: #000000 !default;
+$whitish-grey: #eceded !default;
+$grey: #505559 !default;
+
+%table__cell {
+    padding: em(20) em(16);
+    text-align: left;
+    border: 2px solid $white;
+}
+
+%td {
+    color: $black;
+    background-color: $whitish-grey;
+}
+
+%th {
+    color: $white;
+    background-color: $grey;
+}
+
+.table {
+    width: 100%;
+
+    //&__thead {}
+
+    //&__tbody {}
+
+    //&__tr {}
+
+    &__th {
+        @extend %th;
+        @extend %table__cell;
+
+        //&--thead {}
+
+        //&--body {}
+    }
+
+    &__td {
+        @extend %td;
+        @extend %table__cell;
+
+        //&--thead {}
+
+        //&--body {}
+    }
+}

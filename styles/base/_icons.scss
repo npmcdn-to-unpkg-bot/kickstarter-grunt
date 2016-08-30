@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/*
+
+Icons
+====
+
+*/
+/*
+
+## Iconmoon
+
+
+```
+<div class="dummy-justfiy">
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Close<span class="icon icon--close"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Arrow-Down<span class="icon icon--arrow-down"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Arrow-Left<span class="icon icon--arrow-left"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Arrow-Right<span class="icon icon--arrow-right"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Arrow-Top<span class="icon icon--arrow-top"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Calendar<span class="icon icon--calendar"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Clock<span class="icon icon--clock"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">External Link<span class="icon icon--external-link"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Home<span class="icon icon--home"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Lupe<span class="icon icon--loupe"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Mail<span class="icon icon--mail"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Telefone<span class="icon icon--phone"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Pin<span class="icon icon--pin"></span></div>
+<div class="dummy-block dummy-block--with-content dummy-block--icon">Download<span class="icon icon--download"></span></div>
+</div>
+```
+
+*/
+.icon {
+    font-family: "icomoon";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    // Better Font Rendering ===========
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &::before {
+        //fix transformable (example rotate)
+        display: inline-block;
+        //animate cool
+        transition: all 300ms ease-in-out;
+    }
+}
+
+@mixin icon {
+    //auf before selbst legen
+    font-family: "icomoon";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    // Better Font Rendering ===========
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    //fix transformable (example rotate)
+    display: inline-block;
+}
+
+%__icon--close,
+.icon--close::before {
+    content: "\e600";
+}
+
+%__icon--arrow-down,
+.icon--arrow-down::before {
+    content: "\f107";
+}
+
+%__icon--arrow-left,
+.icon--arrow-left::before {
+    content: "\e2770";
+}
+
+%__icon--arrow-right,
+.icon--arrow-right::before {
+    content: "\e2771";
+}
+
+%__icon--arrow-top,
+.icon--arrow-top::before {
+    content: "\e2771";
+    transform: rotate(-90deg); //rotate for transiton effect
+}
+
+%__icon--calendar,
+.icon--calendar::before {
+    content: "\1f4c6";
+}
+
+%__icon--clock,
+.icon--clock::before {
+    content: "\23f0";
+}
+
+%__icon--external-link,
+.icon--external-link::before {
+    content: "\1f517";
+}
+
+%__icon--home,
+.icon--home::before {
+    content: "\2302";
+}
+
+%__icon--loupe,
+.icon--loupe::before {
+    content: "\e608";
+}
+
+%__icon--mail,
+.icon--mail::before {
+    content: "\1f4e7";
+}
+
+%__icon--phone,
+.icon--phone::before {
+    content: "\260e";
+}
+
+%__icon--pin,
+.icon--pin::before {
+    content: "\1f310";
+}
+
+%__icon--download,
+.icon--download::before {
+    content: "\f019";
+}

@@ -1,0 +1,220 @@
+@charset "UTF-8";
+/*
+
+SASS: Mixins
+====
+
+*/
+/*
+
+## Font's
+
+Schriften (müssen angepasst werden sollte es Fonts geben)
+
+```
+<pre>
+@include font-normal;
+@include font-bold;
+@include font-italic;
+
+oder
+
+@extend .font-normal;
+@extend .font-bold;
+@extend .font-italic;
+</pre>
+```
+
+ */
+@mixin font-normal {
+    font-family: $font_family_normal;
+    font-weight: $font_weight_normal;
+    font-style: $font_style_normal;
+}
+.font-normal {
+    @include font-normal;
+}
+@mixin font-bold {
+    font-family: $font_family_bold;
+    font-weight: $font_weight_bold;
+    font-style: $font_style_bold;
+}
+.font-bold {
+    @include font-bold;
+}
+@mixin font-italic {
+    font-family: $font_family_italic;
+    font-weight: $font_weight_italic;
+    font-style: $font_style_italic;
+}
+.font-italic {
+    @include font-italic;
+}
+/*
+
+## Hover- und Focus-Styles
+
+Shortcut um Hover- und Focus-Styles an einem Element zu definieren.
+
+```
+<pre>
+a,
+button {
+	@include hover {
+		text-decoration: underline;
+	}
+}
+
+... wird zu ...
+
+a:hover,
+button:hover {
+	text-decoration: underline;
+}
+</pre>
+```
+
+ */
+@mixin hover {
+    &:hover {
+        @content;
+    }
+}
+@mixin focus {
+    &:focus {
+        @content;
+    }
+}
+/*
+
+## Ellipsis
+
+Fügt eine horizontale Ellipsis ans Textende.
+
+```
+<pre>
+.selector {
+	@include ellipsis;
+}
+</pre>
+```
+
+ */
+@mixin ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*
+
+## Text visuell verbergen
+
+Blendet Text aus, ohne die Zugänglchkeit für Screenreader zu unterminieren.
+
+```
+<pre>
+.selector {
+	@include hide-text;
+}
+
+.inline-block-selector {
+	@include hide-text (inline-block);
+}</pre>
+```
+
+ */
+@mixin hide-text ($display: block) {
+    overflow: hidden;
+    text-align: left;
+    direction: ltr;
+    text-indent: -9999em;
+    display: $display;
+}
+.audible {
+    @include hide-text;
+}
+/*
+
+## Mixin Media-Query
+
+```
+<pre>
+.selector {
+	@include mediaUp(1200px) {
+		background-color: blue;
+	}
+}
+
+.selector {
+	@include mediaDown(1200px) {
+		background-color: blue;
+	}
+}
+
+.selector {
+	@include mediaBetween(800px, 1200px) {
+		background-color: blue;
+	}
+}
+
+für height
+
+.selector {
+	@include mediaUp(1200px, 'height') {
+		background-color: blue;
+	}
+}
+
+.selector {
+	@include mediaDown(1200px, 'height') {
+		background-color: blue;
+	}
+}
+
+.selector {
+	@include mediaBetween(800px, 1200px, 'height') {
+		background-color: blue;
+	}
+}
+</pre>
+```
+
+ */
+$type: width !default;
+$screen: "only screen" !default;
+@mixin mediaUp($wert, $type: "") {
+    @if $type == height {
+        @media #{$screen} and (min-height: #{$wert}) {
+            @content;
+        }
+    }
+    @else {
+        @media #{$screen} and (min-width: #{$wert}) {
+            @content;
+        }
+    }
+}
+@mixin mediaDown($wert, $type: "") {
+    @if $type == height {
+        @media #{$screen} and (max-height: #{$wert}) {
+            @content;
+        }
+    }
+    @else {
+        @media #{$screen} and (max-width: #{$wert}) {
+            @content;
+        }
+    }
+}
+@mixin mediaBetween($from, $to, $type: "") {
+    @if $type == height {
+        @media #{$screen} and (min-height: #{$from}) and (max-height: #{$to}) {
+            @content;
+        }
+    }
+    @else {
+        @media #{$screen} and (min-height: #{$from}) and (max-height: #{$to}) {
+            @content;
+        }
+    }
+}

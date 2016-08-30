@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/*
+
+Basic Stuff
+====
+*/
+/**
+*	RESET
+*/
+::*,
+*:after,
+*:before {
+    box-sizing: border-box; //better programming with border-box
+}
+
+html {
+    font-size: $body-font-size;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0; //reset default body padding
+    font-size: 100%;
+    line-height: 1.5;
+    @include font-normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* HTML5 für alte */
+header,
+footer,
+section,
+article,
+aside,
+figure,
+figcaption,
+hgroup,
+nav,
+menu,
+picture {
+    display: block;
+}
+
+acronym:hover,
+acronym:active,
+acronym:focus {
+    cursor: help;
+}
+//give all elements the default font-family
+input,
+select,
+textarea,
+button {
+    font-family: inherit;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.gangnam-style * {
+    font-family: "Comic Sans MS";
+}

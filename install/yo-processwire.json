@@ -1,0 +1,40 @@
+{
+    "mv": [{
+        "from": "install/_Gruntfile.js",
+        "to": "Gruntfile.js"
+    }],
+    "bower": {
+        "dependencies": {
+            "jquery": "*",
+            "owl-carousel2": "*",
+            "headroom.js": "https://npmcdn.com/headroom.js/bower.zip",
+            "lazysizes": "*"
+        }
+    },
+    "npm": {
+        "scripts": {
+            "install": "npm install && bower install",
+            "dev": "grunt dev",
+            "build": "grunt build"
+        },
+        "dependencies": {},
+        "devDependencies": {
+            "grunt": "*",
+            "grunt-cli": "*",
+            "grunt-exec": "*",
+            "grunt-copy": "*",
+            "grunt-banner": "*",
+            "grunt-modernizr": "*",
+            "grunt-sass": "*",
+            "load-grunt-tasks": "*",
+            "grunt-concurrent": "*",
+            "grunt-autoprefixer": "*",
+            "grunt-contrib-sass": "*",
+            "grunt-contrib-copy": "*",
+            "grunt-browser-sync": "*",
+            "grunt-contrib-watch": "*",
+            "grunt-contrib-uglify": "*",
+            "foundation-sites": "*"
+        }
+    }
+}

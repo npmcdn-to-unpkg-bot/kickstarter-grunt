@@ -1,0 +1,9 @@
+@charset "UTF-8"; // add icon style to elements/icons.scss
+// here only font-fave
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?-6yzvbk');
+    src: url('../fonts/icomoon.eot?#iefix-6yzvbk') format('embedded-opentype'), url('../fonts/icomoon.woff?-6yzvbk') format('woff'), url('../fonts/icomoon.ttf?-6yzvbk') format('truetype'), url('../fonts/icomoon.svg?-6yzvbk#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,220 @@
+@charset "UTF-8";
+/*
+
+General
+====
+
+*/
+/*
+
+## General "mapping"
+
+Usefull for all RTE output
+
+```
+<pre>
+
+.mapping {
+	> *:first-child {
+		margin-top: 0;
+		padding-top: 0;
+	}
+	> *:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	p {
+		@extend .text;
+	}
+	a {
+		max-width: 100%;
+		@extend .link;
+	}
+	ul {
+		@extend .list;
+		@extend .list--bullet;
+		li {
+			@extend .list__item;
+			@extend .list__item--bullet;
+		}
+	}
+	ol {
+		@extend .list;
+		@extend .list--number;
+		li {
+			@extend .list__item;
+			@extend .list__item--number;
+		}
+	}
+	table {
+		@extend .table;
+		tr {
+			@extend .table__tr;
+		}
+		td {
+			@extend .table__td;
+		}
+		th {
+			@extend .table__th;
+		}
+		tbody {
+			@extend .table__tbody;
+		}
+		thead {
+			@extend .table__thead;
+		}
+	}
+	pre {
+		overflow-x: auto;
+	}
+	h1,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@extend .headline;
+	}
+	h1 {
+		@extend .headline--1;
+	}
+	h2 {
+		@extend .headline--2;
+	}
+	h3 {
+		@extend .headline--3;
+	}
+	h4 {
+		@extend .headline--4;
+	}
+	h5 {
+		@extend .headline--5;
+	}
+	input {
+		@extend .input;
+		&[type=email],
+		&[type=search],
+		&[type=text] {
+			@extend .input--text;
+		}
+		&[type=password] {
+			@extend .input--password;
+		}
+		&[type=submit] {
+			@extend .btn;
+			@extend .btn--submit;
+		}
+		&[type=button] {
+			@extend .btn;
+		}
+	}
+	i {
+		@extend %__i;
+	}
+	em {
+		@extend %__em;
+	}
+}
+</pre>
+```
+
+*/
+.mapping {
+    > *:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    > *:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    p {
+        @extend .text;
+    }
+    a {
+        max-width: 100%;
+        @extend .link;
+    }
+    ul {
+        @extend .list;
+        @extend .list--bullet;
+        li {
+            @extend .list__item;
+            @extend .list__item--bullet;
+        }
+    }
+    ol {
+        @extend .list;
+        @extend .list--number;
+        li {
+            @extend .list__item;
+            @extend .list__item--number;
+        }
+    }
+    table {
+        @extend .table;
+        tr {
+            @extend .table__tr;
+        }
+        td {
+            @extend .table__td;
+        }
+        th {
+            @extend .table__th;
+        }
+        tbody {
+            @extend .table__tbody;
+        }
+        thead {
+            @extend .table__thead;
+        }
+    }
+    pre {
+        overflow-x: auto;
+    }
+    h1,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @extend .headline;
+    }
+    h1 {
+        @extend .headline--1;
+    }
+    h2 {
+        @extend .headline--2;
+    }
+    h3 {
+        @extend .headline--3;
+    }
+    h4 {
+        @extend .headline--4;
+    }
+    h5 {
+        @extend .headline--5;
+    }
+    input {
+        @extend .input;
+        &[type=email],
+        &[type=search],
+        &[type=text] {
+            @extend .input--text;
+        }
+        &[type=password] {
+            @extend .input--password;
+        }
+        &[type=submit] {
+            @extend .btn;
+            @extend .btn--submit;
+        }
+        &[type=button] {
+            @extend .btn;
+        }
+    }
+    i {
+        @extend %__i;
+    }
+    em {
+        @extend %__em;
+    }
+}

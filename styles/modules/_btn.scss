@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/*
+Standart Button's / .btn
+====
+
+Beispiel:
+
+```
+<table class="table">
+	<tr class="table__tr">
+		<td class="table__td">.btn</td>
+		<td class="table__td"><button class="btn">Button</button></td>
+	</tr>
+	<tr class="table__tr">
+		<td class="table__td">.btn--link</td>
+		<td class="table__td"><a class="btn btn--link">Button</a></td>
+	</tr>
+	<tr class="table__tr">
+		<td class="table__td">.btn--input</td>
+		<td class="table__td"><input type="button" class="btn btn--input" value="Button"><input type="button" class="btn btn--input btn--disabled" value="Button Disabled" disabled></td>
+	</tr>
+	<tr class="table__tr">
+		<td class="table__td">.btn--submit</td>
+		<td class="table__td"><input type="submit" class="btn btn--submit" value="Button"><input type="submit" class="btn btn--submit btn--disabled" value="Button Disabled" disabled></td>
+	</tr>
+</table>
+```
+
+*/
+$btn-primary: #3493b3 !default;
+
+.btn {
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+
+    &--outline {
+        //transparent und einfach nur einen rand?
+        border: 1px solid;
+    }
+
+    &--primary {
+        background-color: lighten($btn-primary, 10);
+
+        &-outline {
+            //transparent und einfach nur einen rand?
+            color: lighten($btn-primary, 10);
+        }
+    }
+
+    &--disabled,
+    &:disabled {
+        &,
+        &:focus,
+        &:hover {
+            opacity: .3;
+            box-shadow: none;
+            cursor: default;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+// CONFIG
+@charset "UTF-8";
+
+@import "base/config", // functions will be included in the config
+        "base/icons",
+        "base/sass_mixin";
+
+@import "integration/foundation--grid";
+
+@import "general/base",
+        "general/basics",
+        "general/block",
+        "general/footer",
+        "general/header",
+        "general/typo";
+
+@import "modules/btn",
+        "modules/input",
+        "modules/list",
+        "modules/media",
+        "modules/nav",
+        "modules/table";
+
+
+@import "base/mapping";

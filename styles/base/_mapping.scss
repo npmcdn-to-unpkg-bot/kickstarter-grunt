@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/*
+
+Mapping
+====
+
+*/
+/*
+
+## Mapping
+
+wird im main als letztes includiert.
+Mappt alle möglichen bem klassen auf die html attrribute unter der klasse .mapping
+
+
+*/
+@import "mapping/general",
+        "mapping/processwire";
